@@ -7,6 +7,7 @@
 //
 
 #import "RegistrationViewController.h"
+#import <Parse/Parse.h>
 
 @interface RegistrationViewController ()
 
@@ -26,7 +27,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    if( false ) { // check if user is logged in here
+    if( [PFUser currentUser] != nil ) { // check if user is logged in here
         [self loginSuccessful];
     }
 }
@@ -74,7 +75,7 @@
         [item setHidden:YES];
     }
     
-    viewTitle.text = [NSString stringWithFormat:@"Welcome %@!", @"Username"]; //Parse: set the user's username here
+    viewTitle.text = [NSString stringWithFormat:@"Welcome %@!", [[PFUser currentUser] username]]; //Parse: set the user's username here
     
 }
 
@@ -89,24 +90,86 @@
 }
 
 - (IBAction)login:(id)sender {
+    
+    if( [PFUser currentUser] != nil ) { // check if user is logged in here
 
-    if( false ) { // check if user is logged in here
+        [PFUser logOut]; // Logout the user
+        
         [self logoutSuccessful];
     } else {
     
-        //Parse: login code goes here
-    
+        // make sure username and password aren't empty
+        if( [[usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 ) {
+            [self resignKeyboard];
+            return;
+        }
+        if( [[passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 ) {
+            [self resignKeyboard];
+            return;
+        }
+        
         [self resignKeyboard];
-        [self loginSuccessful];
+        [loginButton setEnabled:NO];
+        [signUpButton setEnabled:NO];
+        
+        //Parse: login code goes here
+        
+        [PFUser logInWithUsernameInBackground:usernameField.text password:passwordField.text block:^(PFUser *user, NSError *error) {
+            if( error == nil && user != nil ) {
+                [loginButton setEnabled:YES];
+                [signUpButton setEnabled:YES];
+                
+                [self loginSuccessful];
+            } else {
+                UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", [error description]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] autorelease];
+                
+                [loginButton setEnabled:YES];
+                [signUpButton setEnabled:YES];
+                
+                [alert show];
+            }
+        }];
     }
 }
 
 - (IBAction)signUp:(id)sender {
     
-    //Parse: sign up code goes here
+    // make sure username and password aren't empty
+    if( [[usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 ) {
+        [self resignKeyboard];
+        return;
+    }
+    if( [[passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 ) {
+        [self resignKeyboard];
+        return;
+    }
     
     [self resignKeyboard];
-    [self loginSuccessful];
+    [loginButton setEnabled:NO];
+    [signUpButton setEnabled:NO];
+    
+    //Parse: sign up code goes here
+    PFUser *user = [PFUser user];
+    user.username = usernameField.text;
+    user.password = passwordField.text;
+    
+    // sign up the user
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if( succeeded ) {
+            [loginButton setEnabled:YES];
+            [signUpButton setEnabled:YES];
+
+            [self loginSuccessful];
+        } else {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", [error description]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] autorelease];
+            
+            [loginButton setEnabled:YES];
+            [signUpButton setEnabled:YES];
+            
+            [alert show];
+        }
+    }];
+    
 }
 
 #pragma mark -

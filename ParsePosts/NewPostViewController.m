@@ -7,6 +7,7 @@
 //
 
 #import "NewPostViewController.h"
+#import <Parse/Parse.h>
 
 @interface NewPostViewController ()
 
@@ -47,6 +48,15 @@
     [super dealloc];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    if( [PFUser currentUser] == nil ) {
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"New Post" message:@"You need to be logged in to post." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+        [alert show];
+
+    }
+}
+
 #pragma mark -
 #pragma mark Button Actions
 
@@ -59,13 +69,18 @@
     if( [postTextView.text isEqualToString:@"Enter your post here!"] || 
         [[postTextView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 ) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Post" message:@"Please type something in." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"New Post" message:@"Please type something in." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
         [alert show];
         
     } else {
         
         //Parse: save the new post here
+        PFObject *post = [PFObject objectWithClassName:@"posts"];
+        [post setObject:postTextView.text forKey:@"comment"];
+        [post setObject:[PFUser currentUser] forKey:@"user"];
+        [post save];
         
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadParseTableData" object:nil];
         
         // dismiss the controller
         [self.navigationController popViewControllerAnimated:YES];

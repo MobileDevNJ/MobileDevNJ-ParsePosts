@@ -7,6 +7,7 @@
 //
 
 #import "RecentPostsTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface RecentPostsTableViewController ()
 
@@ -34,6 +35,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadTableData:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadTableData:) name:@"loadParseTableData" object:nil];
 }
 
 - (void)viewDidUnload
@@ -55,6 +59,18 @@
     [super dealloc];
 }
 
+- (void)loadTableData:(NSNotification *)notification {
+    PFQuery *query = [PFQuery queryWithClassName:@"posts"];
+    NSError *error = nil;
+    
+    [query orderByDescending:@"createdAt"];
+    
+    NSArray *objects = [query findObjects:&error];
+    
+    [self setPosts:objects];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,7 +84,11 @@
     static NSString *CellIdentifier = @"PostCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    PFUser *user = (PFUser *)[[posts objectAtIndex:indexPath.row] objectForKey:@"user"];
+    
+    [user fetchIfNeeded];
+    cell.textLabel.text = [user username];
+    cell.detailTextLabel.text = [[posts objectAtIndex:indexPath.row] objectForKey:@"comment"];
     
     return cell;
 }
