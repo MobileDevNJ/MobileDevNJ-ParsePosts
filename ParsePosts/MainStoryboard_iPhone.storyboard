@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Registration View Controller - Second-->
+        <scene sceneID="13">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
+                <viewController title="Second" id="3" customClass="RegistrationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="17" userLabel="Registration View" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="QdX-Yl-S97" userLabel="Username Field">
+                                <rect key="frame" x="112" y="72" width="188" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="endedEditing:" destination="3" eventType="editingDidEndOnExit" id="8la-Wb-Agn"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mF3-Tn-NzO">
+                                <rect key="frame" x="20" y="76" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="lc0-VT-DCr" userLabel="Password Field">
+                                <rect key="frame" x="112" y="105" width="188" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="endedEditing:" destination="3" eventType="editingDidEndOnExit" id="1nJ-AH-GWI"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="QRK-dw-vzP">
+                                <rect key="frame" x="20" y="110" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please Login or Sign Up Below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3D1-FH-ell">
+                                <rect key="frame" x="20" y="20" width="236" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fj9-CA-EkM">
+                                <rect key="frame" x="100" y="155" width="120" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="3" eventType="touchUpInside" id="FVW-te-WUm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kOk-jQ-Iie">
+                                <rect key="frame" x="100" y="200" width="120" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUp:" destination="3" eventType="touchUpInside" id="3ZA-LY-3aL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="resignKeyboard" destination="3" eventType="touchDown" id="uCs-TM-Z8X"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Login" image="first.png" id="6"/>
+                    <connections>
+                        <outlet property="loginButton" destination="fj9-CA-EkM" id="4Yw-ub-Mpe"/>
+                        <outlet property="passwordField" destination="lc0-VT-DCr" id="NpD-jQ-92S"/>
+                        <outlet property="registrationView" destination="17" id="hT2-ya-unK"/>
+                        <outlet property="signUpButton" destination="kOk-jQ-Iie" id="5Gh-IN-0JV"/>
+                        <outlet property="usernameField" destination="QdX-Yl-S97" id="Zkx-vt-bGG"/>
+                        <outlet property="viewTitle" destination="3D1-FH-ell" id="Fci-Ov-2Ck"/>
+                        <outletCollection property="itemsToHideOnLogin" destination="mF3-Tn-NzO" id="itF-lg-4Uf"/>
+                        <outletCollection property="itemsToHideOnLogin" destination="QRK-dw-vzP" id="bVC-d6-A49"/>
+                        <outletCollection property="itemsToHideOnLogin" destination="kOk-jQ-Iie" id="9M6-Dn-aWH"/>
+                        <outletCollection property="itemsToHideOnLogin" destination="QdX-Yl-S97" id="P3D-Hl-7nC"/>
+                        <outletCollection property="itemsToHideOnLogin" destination="lc0-VT-DCr" id="Ulf-qv-JHV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="685" y="-224"/>
+        </scene>
+        <!--Recent Posts Table View Controller - Recent Posts-->
+        <scene sceneID="JvB-xN-cSR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWc-kL-1Pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="tVF-JX-CJF" customClass="RecentPostsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="q6K-fZ-zoG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" textLabel="R02-W4-GFh" detailTextLabel="NTt-mg-Sxb" style="IBUITableViewCellStyleSubtitle" id="S8G-gD-BLR">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R02-W4-GFh">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NTt-mg-Sxb">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recent Posts" id="GfT-Fq-fTQ">
+                        <barButtonItem key="rightBarButtonItem" id="Jet-UN-NEV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZD1-8c-wtj">
+                                <rect key="frame" x="265" y="5" width="50" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="New">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="a81-e7-jTS" kind="push" id="CMb-vs-vla"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1224" y="215"/>
+        </scene>
+        <!--New Post View Controller - New Post-->
+        <scene sceneID="hHd-v4-ACg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbi-IP-xB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="NewPost" id="a81-e7-jTS" customClass="NewPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QM8-No-FZ2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your post here!" id="Uzg-FQ-PGm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a81-e7-jTS" id="OYh-or-bVy"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="xXs-HW-ILi">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="3kf-oY-pCS"/>
+                        <barButtonItem key="rightBarButtonItem" id="Tb5-DA-wU1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8VB-3v-lJG">
+                                <rect key="frame" x="265" y="5" width="50" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneWithPost:" destination="a81-e7-jTS" eventType="touchDown" id="Xkd-UD-e9H"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postTextView" destination="Uzg-FQ-PGm" id="hc5-cu-iI7"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1667" y="215"/>
+        </scene>
+        <!--Navigation Controller - Recent Posts-->
+        <scene sceneID="1qV-pt-fge">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnK-WS-k61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="1ge-ty-OPw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recent Posts" image="second.png" id="DLx-eQ-8go"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ifZ-Bb-FAQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tVF-JX-CJF" kind="relationship" relationship="rootViewController" id="fMm-9N-Olq"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="693" y="373"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="15">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
+                <tabBarController id="4" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="viewControllers" id="Lrr-Qm-ILG"/>
+                        <segue destination="1ge-ty-OPw" kind="relationship" relationship="viewControllers" id="h07-sg-y4H"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="132" y="180"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first.png" width="30" height="30"/>
+        <image name="second.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="NewPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPostViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="postTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="RecentPostsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPostsTableViewController.h"/>
+        </class>
+        <class className="RegistrationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="registrationView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="viewTitle" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="itemsToHideOnLogin" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
